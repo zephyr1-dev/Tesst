@@ -2,7 +2,7 @@ FROM debian:bullseye
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# --- Sửa lỗi: bullseye đã EOL, chuyển sang archive.debian.org và tắt check hết hạn ---
+# Chỉ dùng archive.debian.org cho kho chính, bỏ debian-security vì đường dẫn không tồn tại
 RUN echo "deb http://archive.debian.org/debian bullseye main contrib non-free" > /etc/apt/sources.list && \
     echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid-until
 
