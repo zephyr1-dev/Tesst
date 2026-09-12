@@ -4,7 +4,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # --- Sửa lỗi: bullseye đã EOL, chuyển sang archive.debian.org và tắt check hết hạn ---
 RUN echo "deb http://archive.debian.org/debian bullseye main contrib non-free" > /etc/apt/sources.list && \
-    echo "deb http://archive.debian.org/debian-security bullseye-security main contrib non-free" >> /etc/apt/sources.list && \
     echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99no-check-valid-until
 
 RUN dpkg --add-architecture i386
